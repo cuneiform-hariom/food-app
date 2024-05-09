@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.tcenter {
+  text-align: center;
+}
+
+.sub-btn {
+  padding: 7px 30px;
+  background-color: peru;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.form-page {
+  padding: 2vw;
+  background: beige;
+  min-height: 100vh;
+}
+
+.form-page .loginform {
+  max-width: 500px;
+  padding: 2vw;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  background-color: white;
+}
+
+.loginform form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form .inp-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.inp-box input {
+  padding: 7px 10px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.restHeader {
+  padding: 1vw 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: beige;
+}
+
+.restHeader .logo img {
+  width: 5vw;
+  mix-blend-mode: luminosity;
+}
+
+.restHeader .navlinks{
+  display: flex;
+  gap: 1vw;
+}
