@@ -2,9 +2,13 @@
 import { restaurantRegister } from '@/redux/apis/restaurantapi';
 import { useFormik } from 'formik';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 export default function RestaurantSignUp() {
+
+  const [showPassword, setShowPassword] = useState(false)
+  const [showCnfPassword, setShowCnfPassword] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -33,6 +37,15 @@ export default function RestaurantSignUp() {
       console.log('res: ', res);
     }
   })
+
+  const showHidePassword = () => {
+    setShowPassword(!showPassword);
+  }
+
+  const showHideCnfPassword = () => {
+    setShowCnfPassword(!showCnfPassword);
+  }
+
   return (
     <div className="form-page">
       <h2 className='tcenter'>Restaurant Register</h2>
@@ -74,24 +87,44 @@ export default function RestaurantSignUp() {
           <div className="inp-box">
             <label htmlFor="password">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
+              autoComplete='off'
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
+            <span
+              className="material-symbols-outlined eyeIcon"
+              onClick={showHidePassword}
+              style={{ opacity: "0.5" }}
+            >
+              {
+                showPassword ? "visibility" : "visibility_off"
+              }
+            </span>
           </div>
           <div className="inp-box">
             <label htmlFor="c_password">Confirm Password</label>
             <input
-              type="password"
+              type={showCnfPassword ? "text" : "password"}
               name="c_password"
               id="c_password"
               value={formik.values.c_password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              autoComplete='off'
             />
+            <span
+              className="material-symbols-outlined eyeIcon"
+              onClick={showHideCnfPassword}
+              style={{ opacity: "0.5" }}
+            >
+              {
+                showCnfPassword ? "visibility" : "visibility_off"
+              }
+            </span>
           </div>
           <div className="inp-box">
             <label htmlFor="city">City</label>
@@ -106,14 +139,16 @@ export default function RestaurantSignUp() {
           </div>
           <div className="inp-box">
             <label htmlFor="address">Full Address</label>
-            <input
-              type="text"
+            <textarea
               name="address"
               id="address"
               value={formik.values.address}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-            />
+              rows={3}
+            >
+
+            </textarea>
           </div>
 
           <div className="submit-box">

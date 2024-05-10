@@ -12,6 +12,10 @@ body {
   text-align: center;
 }
 
+textarea{
+  resize: none;
+}
+
 .sub-btn {
   padding: 7px 30px;
   background-color: peru;
@@ -48,13 +52,22 @@ form .inp-box {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  position: relative;
 }
 
-.inp-box input {
+.inp-box input,
+.inp-box textarea {
   padding: 7px 10px;
+  padding-right: 35px;
   outline: none;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.inp-box .eyeIcon{
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
 }
 
 .restHeader {

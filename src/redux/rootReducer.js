@@ -1,6 +1,7 @@
 
 import { combineReducers } from "@reduxjs/toolkit";
+import restaurantslice from "./slices/restaurantslice";
 
 export const rootReducer = combineReducers({
-    // packages: packagesSlice,
+    restaurants: restaurantslice
 })
